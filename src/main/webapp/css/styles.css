@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+body {
+    font-family: 'Work Sans', sans-serif;
+    margin-left: 20px;
+}
+.list {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.list tr {
+    line-height: 30px;
+    border-bottom: 1px solid black;
+}
+
+span, button {
+    display: block;
+}
+
+button {
+    background-color: #fad756;
+    cursor: pointer;
+    width: 180px;
+    height: 30px;
+    border: none;
+    font-family: 'Work Sans', sans-serif;
+}
+
+button:hover {
+    background-color: #e7c64f;
+}
+
+button:focus {
+    background-color: #ffdf8c;
+}
+
+.nav {
+    font-family: 'Work Sans', sans-serif;
+    border-collapse: collapse;
+}
+
+.nav td {
+    padding-right: 10px;
+}
+
+.nav-link {
+    padding-bottom: 3px;
+    border-bottom: 2px solid;
+    border-bottom-color: cadetblue;
+    border-bottom-left-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link:hover {
+    color: #a8a8a8;
+}
+
+.nav-link:focus {
+    color: #ff0000;
+}
+
+.logout {
+    padding-bottom: 3px;
+    border-bottom: 2px solid;
+    border-bottom-color: #ff0000;
+    border-bottom-left-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.logout:hover {
+    color: #a8a8a8;
+}
+
+.logout:focus {
+    color: #000000;
+}
+
+input {
+    font-family: 'Work Sans', sans-serif;
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: #3b3b3b;
+    width: 180px;
+    margin-bottom: 15px;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+input:focus {
+    border-color: #23b5c5
+}
+
+span {
+    margin-bottom: 5px;
+    font-size: 10pt;
+}
+
+.delete {
+    background: #bd0000;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.delete:hover {
+    background: #670000;
+}
+
+.delete:focus {
+    background: #280000;
+}
+
+.add {
+    background: #00959a;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.add:hover {
+    background: #005254;
+}
+
+.add:focus {
+    background: #002b2d;
+}
+
+.table-header {
+    font-weight: bold;
+}
+
+.table-header td {
+    border-bottom: 2px solid black;
+}
+
+.remove {
+    background: #cca000;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.remove:hover {
+    background: #8f7500;
+}
+
+.remove:focus {
+    color: #594701;
+}
+
+.nav-under {
+    background: #7dda7f;
+    padding: 5px;
+    border-radius: 5px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.nav-under:hover {
+    background: #6bb066;
+}
+
+.nav-under:focus {
+    background: #588d53;
+}
