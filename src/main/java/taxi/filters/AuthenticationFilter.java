@@ -37,7 +37,8 @@ public class AuthenticationFilter implements Filter {
             resp.sendRedirect(req.getContextPath() + "/login");
             return;
         }
-        if (driverId != null && req.getServletPath().equals(req.getContextPath() + "/login")) {
+        if (driverId != null && req.getServletPath().equals(req.getContextPath() + "/login")
+                || req.getServletPath().equals(req.getContextPath() + "/")) {
             resp.sendRedirect(req.getContextPath() + "/index");
             return;
         }
