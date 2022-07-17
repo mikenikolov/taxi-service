@@ -1,10 +1,8 @@
 # 🚕 Taxi Service 🚕
 
-***
-
 ### 👀 Overview
 
-#### Taxi Service - a simple web-application that allow you to do a taxi management.
+Taxi Service - a simple web-application that allows you to do a taxi management.
 
 ***
 
