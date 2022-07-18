@@ -21,11 +21,16 @@ public class ConnectionUtil {
             USERNAME = dbProperties.getProperty("jdbc.username");
             PASSWORD = dbProperties.getProperty("jdbc.password");
             JDBC_DRIVER = dbProperties.getProperty("jdbc.driver");
+        } catch (IOException e) {
+            throw new RuntimeException("Can't read a database properties file", e);
+        }
+    }
+
+    static {
+        try {
             Class.forName(JDBC_DRIVER);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("Can't find SQL Driver", e);
-        } catch (IOException ex) {
-            throw new RuntimeException("Can't read a database properties file", ex);
         }
     }
 
