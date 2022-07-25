@@ -31,6 +31,7 @@ public class AddCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
+        req.setCharacterEncoding("UTF-8");
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
         String model = req.getParameter("model");
         Car car = new Car();

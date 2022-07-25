@@ -16,13 +16,16 @@ import javax.servlet.http.HttpSession;
 
 @WebFilter(urlPatterns = "/*")
 public class AuthenticationFilter implements Filter {
-    private static final Set<String> ALLOWED_URLS = new HashSet<>();
+    private static final Set<String> ALLOWED_NOT_LOGGED_IN_URLS = new HashSet<>();
+    private static final Set<String> DISALLOWED_LOGGED_IN_URLS = new HashSet<>();
 
     @Override
     public void init(FilterConfig filterConfig) {
-        ALLOWED_URLS.add("/login");
-        ALLOWED_URLS.add("/drivers/add");
-        ALLOWED_URLS.add("/css/styles.css");
+        ALLOWED_NOT_LOGGED_IN_URLS.add("/login");
+        ALLOWED_NOT_LOGGED_IN_URLS.add("/drivers/add");
+        ALLOWED_NOT_LOGGED_IN_URLS.add("/css/styles.css");
+        DISALLOWED_LOGGED_IN_URLS.add("/login");
+        DISALLOWED_LOGGED_IN_URLS.add("/");
     }
 
     @Override
@@ -33,12 +36,11 @@ public class AuthenticationFilter implements Filter {
         HttpSession session = req.getSession();
         Long driverId = (Long) session.getAttribute("driver_id");
         req.setAttribute("isLoggedIn", driverId != null);
-        if (driverId == null && !ALLOWED_URLS.contains(req.getServletPath())) {
+        if (driverId == null && !ALLOWED_NOT_LOGGED_IN_URLS.contains(req.getServletPath())) {
             resp.sendRedirect(req.getContextPath() + "/login");
             return;
         }
-        if (driverId != null && req.getServletPath().equals(req.getContextPath() + "/login")
-                || req.getServletPath().equals(req.getContextPath() + "/")) {
+        if (driverId != null && DISALLOWED_LOGGED_IN_URLS.contains(req.getServletPath())) {
             resp.sendRedirect(req.getContextPath() + "/index");
             return;
         }
