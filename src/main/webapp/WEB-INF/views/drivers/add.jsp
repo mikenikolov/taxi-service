@@ -11,13 +11,13 @@
 <h4 style="color: red">${errorMsg}</h4>
 <form method="post" action="${pageContext.request.contextPath}/drivers/add">
     <label><span>Name</span></label>
-    <input required class="text_field" type="text" name="name">
+    <input maxlength="45" required class="text_field" type="text" name="name">
     <label><span>License number</span></label>
-    <input required class="text_field" type="text" name="license_number">
+    <input maxlength="15" required class="text_field" type="text" name="license_number">
     <label><span>Login</span></label>
-    <input required class="text_field" type="text" name="login">
+    <input maxlength="45" required class="text_field" type="text" name="login">
     <label><span>Password</span></label>
-    <input required class="text_field" type="password" name="password">
+    <input maxlength="255" required class="text_field" type="password" name="password">
     <button class="submit_button" type="submit">Confirm</button>
 </form>
 </body>

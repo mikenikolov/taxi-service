@@ -10,13 +10,13 @@
 <h2>Add a driver to car</h2>
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add?car_id=${car.id}">
     <h3>Car's information</h3>
-    <label><span>ID</span>${car.id}</label>
+    <label><span>ID</span><c:out value="${car.id}"/></label>
     <br><br>
-    <label><span>Country</span>${car.manufacturer.country}</label>
+    <label><span>Country</span><c:out value="${car.manufacturer.country}"/></label>
     <br><br>
-    <label><span>Name</span>${car.manufacturer.name}</label>
+    <label><span>Name</span><c:out value="${car.manufacturer.name}"/></label>
     <br><br>
-    <label><span>Model</span>${car.model}</label>
+    <label><span>Model</span><c:out value="${car.model}"/></label>
     <br><br>
     <label><span>Drivers</span></label>
     <select style="width: 340px; font-family: 'Work Sans', sans-serif; margin-bottom: 15px" name="driver_id" required>
@@ -25,15 +25,17 @@
             <c:choose>
                 <c:when test="${currentCarDrivers.contains(driver)}">
                     <option disabled value="${driver.id}">
-                        ID: ${driver.id},
-                        Login: ${driver.login},
-                        License: ${driver.licenseNumber}</option>
+                        ID: <c:out value="${driver.id}"/>,
+                        Login: <c:out value="${driver.login}"/>,
+                        License: <c:out value="${driver.licenseNumber}"/>
+                    </option>
                 </c:when>
                 <c:otherwise>
                     <option value="${driver.id}">
-                        ID: ${driver.id},
-                        Login: ${driver.login},
-                        License: ${driver.licenseNumber}</option>
+                        ID: <c:out value="${driver.id}"/>,
+                        Login: <c:out value="${driver.login}"/>,
+                        License: <c:out value="${driver.licenseNumber}"/>
+                    </option>
                 </c:otherwise>
             </c:choose>
         </c:forEach>

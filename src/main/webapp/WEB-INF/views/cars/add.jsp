@@ -13,11 +13,15 @@
   <select style="width: 250px; font-family: 'Work Sans', sans-serif; margin-bottom: 15px" name="manufacturer_id" required>
     <option selected disabled value="">Select one of manufacturers</option>
     <c:forEach items="${manufacturers}" var="manufacturer">
-      <option value="${manufacturer.id}">ID: ${manufacturer.id}, Name: ${manufacturer.name}, Country: ${manufacturer.country}</option>
+      <option value="${manufacturer.id}">
+        ID: <c:out value="${manufacturer.id}"/>,
+        Name: <c:out value="${manufacturer.name}"/>,
+        Country: <c:out value="${manufacturer.country}"/>
+      </option>
     </c:forEach>
   </select>
   <label><span>Model</span></label>
-  <input required class="text_field" type="text" name="model">
+  <input maxlength="45" required class="text_field" type="text" name="model">
   <button class="submit_button" type="submit">Confirm</button>
 </form>
 </body>

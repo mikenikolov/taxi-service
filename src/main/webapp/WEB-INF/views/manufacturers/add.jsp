@@ -10,9 +10,9 @@
 <h2>Add a manufacturer</h2>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
     <label><span>Name</span></label>
-    <input required class="text_field" type="text" name="name">
+    <input maxlength="45" required class="text_field" type="text" name="name">
     <label><span>Country</span></label>
-    <input required class="text_field" type="text" name="country">
+    <input maxlength="45" required class="text_field" type="text" name="country">
     <button class="submit_button" type="submit">Confirm</button>
 </form>
 </body>

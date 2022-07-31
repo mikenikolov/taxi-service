@@ -9,23 +9,24 @@
 <jsp:include page="/WEB-INF/views/header.jsp"/>
 <h2>Remove a driver from car</h2>
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/remove?id=${car.id}">
-  <h3>Car's information</h3>
-  <label><span>ID</span>${car.id}</label>
+  <<h3>Car's information</h3>
+  <label><span>ID</span><c:out value="${car.id}"/></label>
   <br><br>
-  <label><span>Country</span>${car.manufacturer.country}</label>
+  <label><span>Country</span><c:out value="${car.manufacturer.country}"/></label>
   <br><br>
-  <label><span>Name</span>${car.manufacturer.name}</label>
+  <label><span>Name</span><c:out value="${car.manufacturer.name}"/></label>
   <br><br>
-  <label><span>Model</span>${car.model}</label>
+  <label><span>Model</span><c:out value="${car.model}"/></label>
   <br><br>
   <label><span>Drivers</span></label>
   <select required style="width: 340px; font-family: 'Work Sans', sans-serif; margin-bottom: 15px" name="drivers">
     <option selected disabled value="">Select one of driver</option>
     <c:forEach items="${drivers}" var="driver">
       <option value="${driver.id}">
-        ID: ${driver.id},
-        Login: ${driver.login},
-        License: ${driver.licenseNumber}</option>
+        ID: <c:out value="${driver.id}"/>,
+        Login: <c:out value="${driver.login}"/>,
+        License: <c:out value="${driver.licenseNumber}"/>
+      </option>
     </c:forEach>
   </select>
   <button class="submit_button" type="submit">Confirm a remove</button>

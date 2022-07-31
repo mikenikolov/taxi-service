@@ -17,13 +17,13 @@
 <c:choose>
   <c:when test="${driver != null}">
     <h2>Driver information</h2>
-    <label><span>ID</span>${driver.id}</label>
+    <label><span>ID</span><c:out value="${driver.id}"/></label>
     <br><br>
-    <label><span>Name</span>${driver.name}</label>
+    <label><span>Name</span><c:out value="${driver.name}"/></label>
     <br><br>
-    <label><span>License</span>${driver.licenseNumber}</label>
+    <label><span>License</span><c:out value="${driver.licenseNumber}"/></label>
     <br><br>
-    <label><span>Login</span>${driver.login}</label>
+    <label><span>Login</span><c:out value="${driver.login}"/></label>
     <br><br>
     <h2>List of your cars</h2>
   </c:when>
@@ -52,7 +52,9 @@
           <option>Show all drivers...</option>
           <c:forEach items="${car.drivers}" var="driver">
             <option disabled>
-              ID: ${driver.id}, Login: ${driver.login}, License: ${driver.licenseNumber}
+              ID: <c:out value="${driver.id}"/>,
+              Login: <c:out value="${driver.login}"/>,
+              License: <c:out value="${driver.licenseNumber}"/>
             </option>
           </c:forEach>
         </select>

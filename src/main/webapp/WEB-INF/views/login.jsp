@@ -9,10 +9,10 @@
 <%@include file='/WEB-INF/views/header.jsp' %>
 <h4 style="color: red">${errorMsg}</h4>
 <form method="post" action="${pageContext.request.contextPath}/login">
-    <label><span>Login</span></label>
+    <label maxlength="45" ><span>Login</span></label>
     <input required type="text" name="login">
     <label><span>Password</span></label>
-    <input required type="password" name="password">
+    <input maxlength="255" required type="password" name="password">
     <button class="submit_button" type="submit">Login</button>
 </form>
 </body>
