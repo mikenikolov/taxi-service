@@ -22,7 +22,10 @@
   <select required style="width: 340px; font-family: 'Work Sans', sans-serif; margin-bottom: 15px" name="drivers">
     <option selected disabled value="">Select one of driver</option>
     <c:forEach items="${drivers}" var="driver">
-      <option value="${driver.id}">ID: ${driver.id}, Name: ${driver.name}, License: ${driver.licenseNumber}</option>
+      <option value="${driver.id}">
+        ID: ${driver.id},
+        Login: ${driver.login},
+        License: ${driver.licenseNumber}</option>
     </c:forEach>
   </select>
   <button class="submit_button" type="submit">Confirm a remove</button>

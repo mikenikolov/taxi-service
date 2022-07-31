@@ -8,7 +8,7 @@
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
 <h2>List of all drivers</h2>
-<a class="nav-under" href="${pageContext.request.contextPath}/drivers/add">Add a driver</a>
+<a class="nav-under" href="${pageContext.request.contextPath}/drivers/add">Register a driver</a>
 <br><br>
 <table class="list">
     <tr class="table-header">

@@ -52,7 +52,7 @@
           <option>Show all drivers...</option>
           <c:forEach items="${car.drivers}" var="driver">
             <option disabled>
-              ID: ${driver.id}, Name: ${driver.name}, License: ${driver.licenseNumber}
+              ID: ${driver.id}, Login: ${driver.login}, License: ${driver.licenseNumber}
             </option>
           </c:forEach>
         </select>

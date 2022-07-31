@@ -12,7 +12,7 @@
       </c:when>
       <c:otherwise>
         <td><a class="nav-link" href="${pageContext.request.contextPath}/login">Login page</a></td>
-        <td><a class="nav-link" href="${pageContext.request.contextPath}/drivers/add">Add a driver</a></td>
+        <td><a class="nav-link" href="${pageContext.request.contextPath}/drivers/add">Register a driver</a></td>
       </c:otherwise>
     </c:choose>
   </tr>

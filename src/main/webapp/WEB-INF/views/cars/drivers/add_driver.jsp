@@ -24,10 +24,16 @@
         <c:forEach items="${drivers}" var="driver">
             <c:choose>
                 <c:when test="${currentCarDrivers.contains(driver)}">
-                    <option disabled value="${driver.id}">ID: ${driver.id}, Name: ${driver.name}, License: ${driver.licenseNumber}</option>
+                    <option disabled value="${driver.id}">
+                        ID: ${driver.id},
+                        Login: ${driver.login},
+                        License: ${driver.licenseNumber}</option>
                 </c:when>
                 <c:otherwise>
-                    <option value="${driver.id}">ID: ${driver.id}, Name: ${driver.name}, License: ${driver.licenseNumber}</option>
+                    <option value="${driver.id}">
+                        ID: ${driver.id},
+                        Login: ${driver.login},
+                        License: ${driver.licenseNumber}</option>
                 </c:otherwise>
             </c:choose>
         </c:forEach>
