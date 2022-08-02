@@ -11,7 +11,7 @@ import taxi.lib.Injector;
 import taxi.model.Driver;
 import taxi.service.RegistrationService;
 
-@WebServlet(urlPatterns = "/drivers/add")
+@WebServlet(urlPatterns = "/drivers/register")
 public class RegisterDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
     private final RegistrationService registrationService = (RegistrationService) injector
@@ -20,7 +20,7 @@ public class RegisterDriverController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/drivers/add.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/drivers/register.jsp").forward(req, resp);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class RegisterDriverController extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/drivers");
         } catch (RegistrationException e) {
             req.setAttribute("errorMsg", e.getMessage());
-            req.getRequestDispatcher("/WEB-INF/views/drivers/add.jsp").forward(req, resp);
+            req.getRequestDispatcher("/WEB-INF/views/drivers/register.jsp").forward(req, resp);
         }
     }
 }

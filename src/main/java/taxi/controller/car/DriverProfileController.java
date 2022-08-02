@@ -13,8 +13,8 @@ import taxi.model.Driver;
 import taxi.service.CarService;
 import taxi.service.DriverService;
 
-@WebServlet(urlPatterns = "/driver/cars")
-public class GetMyCurrentCarsController extends HttpServlet {
+@WebServlet(urlPatterns = "/profile")
+public class DriverProfileController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("taxi");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService =

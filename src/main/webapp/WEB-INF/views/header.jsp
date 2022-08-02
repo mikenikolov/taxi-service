@@ -8,11 +8,11 @@
         <td><a class="nav-link" href="${pageContext.request.contextPath}/drivers">Drivers</a></td>
         <td><a class="nav-link" href="${pageContext.request.contextPath}/manufacturers">Manufacturers</a></td>
         <td><a class="nav-link" href="${pageContext.request.contextPath}/cars">Cars</a></td>
-        <td><a class="nav-link" href="${pageContext.request.contextPath}/driver/cars">My profile</a></td>
+        <td><a class="nav-link" href="${pageContext.request.contextPath}/profile">My profile</a></td>
       </c:when>
       <c:otherwise>
         <td><a class="nav-link" href="${pageContext.request.contextPath}/login">Login page</a></td>
-        <td><a class="nav-link" href="${pageContext.request.contextPath}/drivers/add">Register a driver</a></td>
+        <td><a class="nav-link" href="${pageContext.request.contextPath}/drivers/register">Register a driver</a></td>
       </c:otherwise>
     </c:choose>
   </tr>

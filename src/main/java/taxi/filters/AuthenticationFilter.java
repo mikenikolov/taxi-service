@@ -22,7 +22,7 @@ public class AuthenticationFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) {
         ALLOWED_NOT_LOGGED_IN_URLS.add("/login");
-        ALLOWED_NOT_LOGGED_IN_URLS.add("/drivers/add");
+        ALLOWED_NOT_LOGGED_IN_URLS.add("/drivers/register");
         ALLOWED_NOT_LOGGED_IN_URLS.add("/css/styles.css");
         DISALLOWED_LOGGED_IN_URLS.add("/login");
         DISALLOWED_LOGGED_IN_URLS.add("/");

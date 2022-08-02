@@ -9,7 +9,7 @@
 <jsp:include page="/WEB-INF/views/header.jsp"/>
 <h2>Register a driver</h2>
 <h4 style="color: red">${errorMsg}</h4>
-<form method="post" action="${pageContext.request.contextPath}/drivers/add">
+<form method="post" action="${pageContext.request.contextPath}/drivers/register">
     <label><span>Name</span></label>
     <input maxlength="45" required class="text_field" type="text" name="name">
     <label><span>License number</span></label>
