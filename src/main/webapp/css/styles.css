@@ -150,7 +150,7 @@ span {
 }
 
 .remove:focus {
-    color: #594701;
+    background: #594701;
 }
 
 .nav-under {
