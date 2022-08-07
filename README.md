@@ -57,6 +57,7 @@ The application is implemented with the **3-tier** architecture:
 - JSP
 - JSTL 1.2
 - Apache Tomcat 9.0.50
+- Log4j 2.18.0
 - Java Servlet 4.0.1
 - HTML/CSS
 
