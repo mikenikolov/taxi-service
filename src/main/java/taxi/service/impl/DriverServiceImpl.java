@@ -2,6 +2,8 @@ package taxi.service.impl;
 
 import java.util.List;
 import java.util.Optional;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import taxi.dao.DriverDao;
 import taxi.lib.Inject;
 import taxi.lib.Service;
@@ -10,6 +12,7 @@ import taxi.service.DriverService;
 
 @Service
 public class DriverServiceImpl implements DriverService {
+    private static final Logger logger = LogManager.getLogger(DriverServiceImpl.class);
     @Inject
     private DriverDao driverDao;
 
@@ -20,8 +23,12 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Driver get(Long id) {
-        return driverDao.get(id).orElseThrow(() ->
-                new RuntimeException("There is no driver with such id: " + id));
+        Optional<Driver> driver = driverDao.get(id);
+        if (driver.isPresent()) {
+            return driver.get();
+        }
+        logger.error("There is no driver with such id. Params: [driverId = {}]", id);
+        throw new RuntimeException("There is no driver with such id: " + id);
     }
 
     @Override
@@ -31,12 +38,20 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Driver update(Driver driver) {
-        return driverDao.update(driver);
+        Driver updatedDriver = driverDao.update(driver);
+        logger.info("The driver has been updated. Params: [driverId = {}]", updatedDriver.getId());
+        return updatedDriver;
     }
 
     @Override
     public boolean delete(Long id) {
-        return driverDao.delete(id);
+        boolean isDeleted = driverDao.delete(id);
+        if (isDeleted) {
+            logger.info("The driver has been deleted. Params: [driverId = {}]", id);
+            return true;
+        }
+        logger.error("There is no driver with such id. Params: [driverId = {}]", id);
+        return false;
     }
 
     @Override

@@ -1,6 +1,9 @@
 package taxi.service.impl;
 
 import java.util.List;
+import java.util.Optional;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import taxi.dao.CarDao;
 import taxi.lib.Inject;
 import taxi.lib.Service;
@@ -10,6 +13,7 @@ import taxi.service.CarService;
 
 @Service
 public class CarServiceImpl implements CarService {
+    private static final Logger logger = LogManager.getLogger(CarServiceImpl.class);
     @Inject
     private CarDao carDao;
 
@@ -17,12 +21,17 @@ public class CarServiceImpl implements CarService {
     public void addDriverToCar(Driver driver, Car car) {
         car.getDrivers().add(driver);
         carDao.update(car);
+        logger.info("The driver has been added to the car. Params: [driverId = {}, carId = {}]",
+                driver.getId(), car.getId());
     }
 
     @Override
     public void removeDriverFromCar(Driver driver, Car car) {
         car.getDrivers().remove(driver);
         carDao.update(car);
+        logger.info("The driver has been removed from the car. "
+                        + "Params: [driverId = {}, carId = {}]",
+                driver.getId(), car.getId());
     }
 
     @Override
@@ -32,13 +41,21 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car create(Car car) {
-        return carDao.create(car);
+        Car createdCar = carDao.create(car);
+        logger.info("The car has been created. Params: [carId = {}, carModel = {}, "
+                + "manufacturerId = {}]", createdCar.getId(), createdCar.getModel(),
+                createdCar.getManufacturer().getId());
+        return createdCar;
     }
 
     @Override
     public Car get(Long id) {
-        return carDao.get(id).orElseThrow(() ->
-                new RuntimeException("There is no car with such id: " + id));
+        Optional<Car> car = carDao.get(id);
+        if (car.isPresent()) {
+            return car.get();
+        }
+        logger.error("There is no car with such id. Params: [carId = {}]", id);
+        throw new RuntimeException("There is no car with such id: " + id);
     }
 
     @Override
@@ -48,11 +65,19 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car update(Car car) {
-        return carDao.update(car);
+        Car updatedCar = carDao.update(car);
+        logger.info("The car has been updated. Params: [carId = {}]", updatedCar.getId());
+        return car;
     }
 
     @Override
     public boolean delete(Long id) {
-        return carDao.delete(id);
+        boolean isDeleted = carDao.delete(id);
+        if (isDeleted) {
+            logger.info("The car has been deleted. Params: [carId = {}]", id);
+            return true;
+        }
+        logger.error("There is no car with such id. Params: [carId = {}]", id);
+        return false;
     }
 }
