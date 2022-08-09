@@ -1,6 +1,7 @@
 package taxi.util;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,12 +12,13 @@ public class ConnectionUtil {
     private static final String USERNAME;
     private static final String PASSWORD;
     private static final String JDBC_DRIVER;
+    private static final String DATABASE_PROPERTIES_FILE = "database.properties";
 
     static {
-        Properties dbProperties = new Properties();
-        try {
-            dbProperties.load(ConnectionUtil.class
-                    .getClassLoader().getResourceAsStream("database.properties"));
+        try (InputStream resourceAsStream = ConnectionUtil.class.getClassLoader()
+                .getResourceAsStream(DATABASE_PROPERTIES_FILE)) {
+            Properties dbProperties = new Properties();
+            dbProperties.load(resourceAsStream);
             URL = dbProperties.getProperty("jdbc.url");
             USERNAME = dbProperties.getProperty("jdbc.username");
             PASSWORD = dbProperties.getProperty("jdbc.password");
