@@ -7,7 +7,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
-<h2>Register a driver</h2>
+<h3>Register a driver</h3>
 <h4 style="color: red">${errorMsg}</h4>
 <form method="post" action="${pageContext.request.contextPath}/drivers/register">
     <label><span>Name</span></label>

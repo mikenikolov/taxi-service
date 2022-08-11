@@ -7,7 +7,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
-<h2>Add a manufacturer</h2>
+<h3>Add a manufacturer</h3>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
     <label><span>Name</span></label>
     <input maxlength="45" required class="text_field" type="text" name="name">

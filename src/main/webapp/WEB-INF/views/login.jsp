@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="/css/styles.css" type="text/css"/>
 </head>
 <body>
-<h2>Taxi Service</h2>
 <%@include file='/WEB-INF/views/header.jsp' %>
 <h4 style="color: red">${errorMsg}</h4>
 <form method="post" action="${pageContext.request.contextPath}/login">

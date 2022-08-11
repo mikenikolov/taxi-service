@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 body {
     font-family: 'Work Sans', sans-serif;
     margin-left: 20px;
 }
+
+h2 {
+    font-family: 'Pacifico', cursive;
+}
+
 .list {
     border-collapse: collapse;
     text-align: center;
@@ -47,7 +54,6 @@ button:focus {
     padding-bottom: 3px;
     border-bottom: 2px solid;
     border-bottom-color: cadetblue;
-    border-bottom-left-radius: 5px;
     text-decoration: none;
     color: black;
 }
@@ -57,14 +63,13 @@ button:focus {
 }
 
 .nav-link:focus {
-    color: #ff0000;
+    border-bottom-color: #dad17d;
 }
 
 .logout {
     padding-bottom: 3px;
     border-bottom: 2px solid;
     border-bottom-color: #ff0000;
-    border-bottom-left-radius: 5px;
     text-decoration: none;
     color: black;
 }
@@ -74,7 +79,7 @@ button:focus {
 }
 
 .logout:focus {
-    color: #000000;
+    border-bottom-color: #000000;
 }
 
 input {

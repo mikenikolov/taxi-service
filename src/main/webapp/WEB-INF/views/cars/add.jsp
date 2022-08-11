@@ -7,7 +7,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
-<h2>Add a car</h2>
+<h3>Add a car</h3>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
   <label><span>Manufacturer</span></label>
   <select style="width: 250px; font-family: 'Work Sans', sans-serif; margin-bottom: 15px" name="manufacturer_id" required>

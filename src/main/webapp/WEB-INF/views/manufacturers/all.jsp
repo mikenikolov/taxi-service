@@ -7,7 +7,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
-<h2>List of all manufacturers</h2>
+<h3>List of all manufacturers</h3>
 <a class="nav-under" href="${pageContext.request.contextPath}/manufacturers/add">Add a manufacturer</a>
 <br><br>
 <table class="list">

@@ -7,9 +7,9 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
-<h2>Remove a driver from car</h2>
+<h3>Remove a driver from car</h3>
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/remove?id=${car.id}">
-  <h3>Car's information</h3>
+  <h4>Car's information</h4>
   <label><span>ID</span><c:out value="${car.id}"/></label>
   <br><br>
   <label><span>Country</span><c:out value="${car.manufacturer.country}"/></label>

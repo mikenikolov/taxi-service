@@ -4,7 +4,7 @@
 <head>
   <c:choose>
     <c:when test="${driver != null}">
-    <title>My profile</title>
+      <title>My profile</title>
     </c:when>
     <c:otherwise>
       <title>All cars</title>
@@ -16,7 +16,7 @@
 <jsp:include page="/WEB-INF/views/header.jsp"/>
 <c:choose>
   <c:when test="${driver != null}">
-    <h2>Driver information</h2>
+    <h3>Driver information</h3>
     <label><span>ID</span><c:out value="${driver.id}"/></label>
     <br><br>
     <label><span>Name</span><c:out value="${driver.name}"/></label>
@@ -25,10 +25,10 @@
     <br><br>
     <label><span>Login</span><c:out value="${driver.login}"/></label>
     <br><br>
-    <h2>List of your cars</h2>
+    <h3>List of your cars</h3>
   </c:when>
   <c:otherwise>
-    <h2>List of all cars</h2>
+    <h3>List of all cars</h3>
     <a class="nav-under" href="${pageContext.request.contextPath}/cars/add">Add a car</a>
     <br><br>
   </c:otherwise>
