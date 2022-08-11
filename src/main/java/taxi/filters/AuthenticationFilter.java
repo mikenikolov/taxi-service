@@ -25,7 +25,6 @@ public class AuthenticationFilter implements Filter {
         ALLOWED_NOT_LOGGED_IN_URLS.add("/drivers/register");
         ALLOWED_NOT_LOGGED_IN_URLS.add("/css/styles.css");
         DISALLOWED_LOGGED_IN_URLS.add("/login");
-        DISALLOWED_LOGGED_IN_URLS.add("/");
     }
 
     @Override
@@ -41,7 +40,7 @@ public class AuthenticationFilter implements Filter {
             return;
         }
         if (driverId != null && DISALLOWED_LOGGED_IN_URLS.contains(req.getServletPath())) {
-            resp.sendRedirect(req.getContextPath() + "/index");
+            resp.sendRedirect(req.getContextPath() + "/");
             return;
         }
         chain.doFilter(req, resp);
