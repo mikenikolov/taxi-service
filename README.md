@@ -4,39 +4,36 @@
 
 Taxi Service - a simple web-application that allows you to do a taxi management.
 
-***
-
-### 📖 Description
-With this simple web-application taxi management becomes a lot easier!
-
 **You can test this already deployed project at the following link:**
 
 https://taxiservice-web.herokuapp.com/
+***
 
+### 📖 Features
 The application supports:
 - Authentication
 - Registration
 - Logout
 
 You can easily manage _manufacturers_/_cars_/_drivers_ with these CRUD operations:
-- ##### 🏭 Manufacturer
+- 🏭 **Manufacturer**
     - Add
     - Delete
 
-- ##### 🚗 Car
+- 🚗 **Car**
     - Add
     - Delete
     - Add / Remove a driver
 
-- ##### 😎 Driver
+- 😎 **Driver**
     - Register
     - Delete
 
-- ##### 📄 List of all
+- 📄 **List of all**
     - Manufacturers
     - Cars
     - Drivers
-- ##### 💼 Profile of the logged in driver with their cars
+- 💼 **Profile of the logged in driver with their cars**
 
 🙂 _PS. The application provides a user-friendly web interface that is easy to work with!_ 
 
@@ -87,10 +84,10 @@ The application is implemented with the **3-tier** architecture:
 
 ### 💾 Data structure
 
-#### DB diagram
+- **DB diagram**
 ![db.png](img/db.png)
 
-#### UML diagram
+- **UML diagram**
 ![uml.png](img/uml.png)
 
 ***
